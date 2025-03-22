@@ -1,7 +1,7 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
-#include <cctype> 
-#include <cmath>   
+#include <cctype>
+#include <cmath>
 
 // Задача 1: Подсчет слов без цифр
 unsigned int faStr1(const char* str) {
@@ -19,8 +19,7 @@ unsigned int faStr1(const char* str) {
             if (isdigit(*p)) {
                 has_digit = true;
             }
-        }
-        else {
+        } else {
             if (in_word) {
                 if (!has_digit) {
                     count++;
@@ -49,14 +48,12 @@ unsigned int faStr2(const char* str) {
             if (!in_word) {
                 in_word = true;
                 is_valid = isupper(*p);  // Первая буква заглавная
-            }
-            else {
+            } else {
                 if (!islower(*p)) {      // Остальные — строчные
                     is_valid = false;
                 }
             }
-        }
-        else {
+        } else {
             if (in_word) {
                 if (is_valid) {
                     count++;
@@ -86,12 +83,10 @@ unsigned int faStr3(const char* str) {
             if (!in_word) {
                 in_word = true;
                 current_length = 1;
-            }
-            else {
+            } else {
                 current_length++;
             }
-        }
-        else {
+        } else {
             if (in_word) {
                 total_length += current_length;
                 word_count++;
